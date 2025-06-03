@@ -94,13 +94,13 @@ main{
     transform: scale(1.1);
 }
 #reuniones.card-link {
-    background-image: url(assets/Img/reuniones.jpg);
+    background-image: url(./assets/Img/reuniones.jpg);
 }
 #predicacion.card-link {
-    background-image: url(assets/Img/predicacion.jpg);
+    background-image: url(./assets/Img/predicacion.jpg);
 }
 #programas.card-link {
-    background-image: url(assets/Img/aseo.jpg);
+    background-image: url(./assets/Img/aseo.jpg);
 }
 .btn-index {
     margin-top: 0.5rem;
