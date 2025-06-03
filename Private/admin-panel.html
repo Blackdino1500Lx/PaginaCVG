@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Panel de Administración</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2.0.0"></script>
+</head>
+<body>
+
+    <h1>Panel de Administración</h1>
+
+    <!-- Formulario para subir Excel -->
+    <div>
+        <input type="file" id="archivoExcel" accept=".xlsx, .xls">
+        <button onclick="procesarExcel()">Importar Reuniones</button>
+    </div>
+
+    <!-- Formulario para agregar reuniones manualmente -->
+    <form id="form-reunion">
+        <label for="fecha_rango">Semana:</label>
+        <input type="text" id="fecha_rango" name="fecha_rango" required>
+
+        <label for="tema">Tema de la reunión:</label>
+        <input type="text" id="tema" name="tema" required>
+
+        <label for="canciones">Canciones:</label>
+        <input type="text" id="canciones" placeholder="Ejemplo: Canción 36, Canción 68" required>
+
+        <button type="submit">Guardar Reunión</button>
+    </form>
+
+    <!-- Contenedor donde se mostrarán reuniones -->
+    <div id="lista-reuniones"></div>
+    <script type="module" src="panel.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.18.5/xlsx.full.min.js"></script>
+</body>
+</html>

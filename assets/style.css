@@ -1,0 +1,358 @@
+:root {
+    --color-primario: #71A5DE;  /* Azul */
+    --color-secundario: #AECBEB; /* Gris */
+    --color-fondo: #F8F9FB; /* Fondo claro */
+    --color-texto: #1e2327; /* Texto oscuro */
+}
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body {
+    font-family: 'Montserrat', sans-serif;
+}
+header{
+display: flex;
+width: 100%;
+align-items: center;
+justify-content: space-between;
+height: 5rem;
+background-color: var(--color-primario);
+}
+.logo{
+    text-decoration: none;
+    color: var(--color-texto);
+}
+nav{
+    margin-right: 6rem;
+}
+nav ul {
+    display: flex;
+    list-style: none;
+    gap: 1.5rem;
+
+}
+
+nav li {
+    font-size: 1.2rem;
+}
+
+nav a {
+    color: var(--white);
+    text-decoration: none;
+    font-weight: 500;
+}
+nav img{
+    height: 1.8rem;
+    margin-top: -0.3rem;
+    margin-left: 6rem;
+}
+h2{
+    width: 100%;
+    height: 10rem;
+    text-align: center;
+    margin-top: .5rem;
+}
+main{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.contenido{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 320px));
+    gap: 2rem;
+    margin-top: 2rem;
+    justify-content: center;
+    /* Centra los cards si sobran columnas */
+    max-width: 1400px;
+    /* Limita el ancho total del grid */
+    margin-left: auto;
+    margin-right: auto;
+}
+.card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5rem;
+    
+}
+.card-link {
+    display: block;
+    width: 100%;
+    height: 15rem;
+    border-radius: 10px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    transition: 0.5s;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    transition: 0.5s;
+}
+.card-link:hover {
+    transform: scale(1.1);
+}
+#reuniones.card-link {
+    background-image: url(/assets/Img/reuniones.jpg);
+}
+#predicacion.card-link {
+    background-image: url(/assets/Img/predicacion.jpg);
+}
+#programas.card-link {
+    background-image: url(/assets/Img/aseo.jpg);
+}
+.btn-index {
+    margin-top: 0.5rem;
+    padding: 0.7rem 2rem;
+    border: none;
+    border-radius: 8px;
+    background: var(--color-primario);
+    color: var(--white);
+    font-weight:600;
+    font-size: 1.3rem;
+    cursor: pointer;
+    display: block;
+    width: 90%;
+    max-width: 320px;
+    margin-left: auto;
+    margin-right: auto;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    transition: 0.5s;
+}
+.btn-index:hover {
+    background: var(--color-secundario);
+    transform: scale(1.05);
+}
+.nav-toggle {
+    display: none;
+}
+
+/* Menú hamburguesa y animación */
+.nav-toggle {
+    display: none;
+}
+
+.nav-toggle-label {
+    display: none;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 2.7rem;
+    height: 2.7rem;
+    cursor: pointer;
+    background: transparent;
+    border-radius: 8px;
+    transition: background 0.2s;
+    z-index: 200;
+}
+
+.nav-toggle-label span {
+    display: block;
+    height: 0.28rem;
+    width: 2rem;
+    background: var(--color-texto);
+    border-radius: 2px;
+    transition: 0.3s;
+    margin: 0.18rem 0;
+}
+
+/* Animación hamburguesa a "X" */
+.nav-toggle:checked + .nav-toggle-label span:nth-child(1) {
+    transform: translateY(0.46rem) rotate(45deg);
+}
+.nav-toggle:checked + .nav-toggle-label span:nth-child(2) {
+    opacity: 0;
+}
+.nav-toggle:checked + .nav-toggle-label span:nth-child(3) {
+    transform: translateY(-0.46rem) rotate(-45deg);
+}
+
+.login-text {
+    display: none;
+}
+.login-img {
+    display: inline;
+}
+/* Estilos pagina reuniones */
+.tabs {
+    margin-bottom: 10px;
+}
+
+.contenido {
+    border: 1px solid #ccc;
+    padding: 15px;
+    border-radius: 5px;
+}
+#entre-semana-btn, 
+#fin-semana-btn {
+    margin-top: 1rem;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    background-color: var(--color-primario);
+    color: var(--color-texto);
+    cursor: pointer;
+    margin-right: 10px;
+    font-weight: 600;
+}
+/* Estilos para login*/
+.form-login{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    width: 100%;
+    max-width: 400px;
+    margin: 0 auto;
+    padding: 2rem;
+    background-color: var(--color-fondo);
+    border-radius: 10px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    margin-top: 1rem;
+}
+.form-group  {
+    margin-top: -6rem;
+    color: var(--color-texto);
+}
+.form-login label{
+    display: flex;
+    flex-direction: column;
+    font-size: 1.3rem;
+    margin-bottom: .8rem;
+}
+.form-login input {
+    padding: 0.7rem;
+    border: 1px solid #adc2c6;
+    border-radius: 5px;
+    width: 100%;
+    margin-bottom: 1rem;
+    font-size: 1rem;
+    background-color: var(--color-secundario);
+}
+.submit{
+    padding: 0.7rem 1.5rem;
+    border: none;
+    border-radius: 5px;
+    background-color: var(--color-primario);
+    color: var(--color-texto);
+    font-weight: 600;
+    cursor: pointer;
+    font-size: 1.2rem;
+    transition: background-color 0.3s, transform 0.3s;
+}
+.submit:hover {
+    background-color: var(--color-secundario);
+    transform: scale(1.05);
+}
+@media (max-width: 768px) {
+    main{
+        text-align: center;
+    }
+   header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1rem 2rem; /* Ajusta el padding si quieres más espacio a los lados */
+    gap: 1rem; /* Opcional, para separar los elementos */
+}
+    .logo {
+        margin-bottom: 0;
+    }
+    .logo h1 {
+        font-size: 1.5rem;
+        margin-bottom: 0;
+        white-space: nowrap;
+    }
+    .nav-toggle-label {
+    display: flex;
+    align-items: right;
+    justify-content: center;
+    width: 2.7rem;
+    height: 2.7rem;
+    cursor: pointer;
+    background: transparent;
+    border-radius: 8px;
+    transition: background 0.2s;
+    z-index: 200;
+    margin-left: 1rem; /* Opcional: separa del logo */
+}
+    nav {
+        width: 100%;
+        position: relative;
+    }
+    nav ul {
+        display: none;
+        flex-direction: column;
+        gap: 1.5rem;
+        width: 70%;
+        left: 10rem;
+        top: 0; 
+        min-height: 100vh; 
+        background: var(--color-fondo);
+        color: var(--color-texto);
+        padding: 5rem 1.5rem 2rem 1.5rem;
+        position: fixed;
+        z-index: 150;
+        align-items: flex-start;
+        border-radius: 0 0 18px 18px;
+        box-shadow: 0 8px 32px rgba(0,0,0,0.15);
+        animation: menuFadeIn 0.3s;
+    }
+    .nav-toggle:checked + .nav-toggle-label + nav ul {
+        display: flex;
+    }
+    nav li {
+        font-size: 1.2rem;
+        width: 100%;
+        margin-left: 1.5rem;
+    }
+    nav a {
+        width: 70%;
+        display: block;
+        padding: 0.7rem 0;
+        border-radius: 8px;
+        transition: background 0.2s;
+    }
+    nav a:hover {
+        background: var(--color-secundario);
+        color: var(--color-texto);
+    }
+    .login-text {
+        display: inline;
+        font-weight: 500;
+        font-size: 1.1rem;
+        margin-left: 0.2rem;
+    }
+    .login-img {
+        display: none;
+    }
+    h2{
+        margin-bottom: -6rem;
+    }
+    .contenido {
+        display: grid;
+        grid-template-columns: 1fr;
+        width: 100vw;
+        max-width: 100vw;
+        margin: 0;
+        padding: 1rem;
+    }
+    .card {
+        width: 100vw;
+        max-width: 100vw;
+        margin: 0 auto 1.5rem auto;
+    }
+    .btn-index {
+        font-size: 1.1rem;
+        padding: 0.7rem 1rem;
+        width: 95%;
+    }
+}
+
+/* Animación de aparición del menú */
+@keyframes menuFadeIn {
+    from { opacity: 0; transform: translateY(-10px);}
+    to { opacity: 1; transform: translateY(0);}
+}

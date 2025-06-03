@@ -1,0 +1,20 @@
+document.addEventListener('click', function(e) {
+    const navToggle = document.getElementById('nav-toggle');
+    const nav = document.querySelector('nav');
+    const label = document.querySelector('.nav-toggle-label');
+    if (
+        navToggle.checked &&
+        !nav.contains(e.target) &&
+        !label.contains(e.target) &&
+        e.target !== navToggle
+    ) {
+        navToggle.checked = false;
+    }
+});
+
+// Opcional: cerrar al hacer clic en cualquier enlace del menú
+document.querySelectorAll('nav a').forEach(link => {
+    link.addEventListener('click', () => {
+        document.getElementById('nav-toggle').checked = false;
+    });
+});

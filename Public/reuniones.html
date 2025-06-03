@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="Congregacion Vista Grande" description="Pagina para Informacion de Reuniones y predicacion">
+    <link rel="stylesheet" href="https://cdn-uicons.flaticon.com/uicons-regular-rounded/css/uicons-regular-rounded.css">
+    <link rel="stylesheet" href="/assets/style.css">
+    <title>Pizarra Vista Grande</title>
+</head>
+<body>
+    <header>
+        <a href="/Public/index.html" class="logo">
+            <h1>Pizarra Vista Grande</h1>
+        </a>
+        <input type="checkbox" id="nav-toggle" class="nav-toggle" />
+        <label for="nav-toggle" class="nav-toggle-label">
+            <span></span>
+            <span></span>
+            <span></span>
+        </label>
+        <nav>
+            <ul>
+                <li><a href="/Public/index.html">Inicio</a></li>
+                <li><a href="/Public/reuniones.html">Reuniones</a></li>
+                <li><a href="/Public/predicacion.html">Predicacion</a></li>
+                <li><a href="/Views/programas.html">Programas</a></li>
+                <li><a href="/Views/login.html">
+                    <img class="login-img" src="/assets/Img/user.svg" alt="icono-login">
+                    <span class="login-text">Iniciar sesión</span>
+                </a></li>
+            </ul>
+            
+        </nav>
+    </header>
+    <main>
+        <div class="tabs">
+                <button id="entre-semana-btn" onclick="mostrar('entre-semana')">Entre Semana</button>
+                <button id="fin-semana-btn" onclick="mostrar('fin-semana')">Fin de Semana</button>
+            </div>
+        <div class="contenido">
+            <!-- Contenedor de reuniones entre semana -->
+            <div id="entre-semana" class="seccion-reunion tabs-content">
+                <div id="lista-reuniones-semana"></div>
+
+            </div>
+            </div>
+        
+            <!-- Contenedor de reuniones de fin de semana (oculto por defecto) -->
+            <div id="fin-semana" class="seccion-reunion tab-content" style="display:none;">
+                <div id="lista-reuniones-finde"></div>
+            </div>
+            </div>
+        
+        </div>
+    </main>
+    <script src="/Components/HbMenu"></script>
+    <script src="/Components/swich.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js"></script>
+    <script type="module" src="/Components/reuniones.js"></script>
+</body>
+</html>
