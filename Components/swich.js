@@ -1,3 +1,4 @@
+// Este script permite alternar entre dos secciones de contenido en una página web. Entre semana y fin de semana, mostrando solo la sección correspondiente al botón presionado.
 document.addEventListener("DOMContentLoaded", function() {
   function mostrar(seccion) {
     // Ocultar solo las secciones internas
